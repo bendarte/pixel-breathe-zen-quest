@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,30 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// 8-bit pixel app theme colors
+				pixel: {
+					'blue': '#5b6ee1',
+					'light-blue': '#9badb7',
+					'purple': '#9c7683',
+					'light-purple': '#d6bcfa',
+					'green': '#6abe30',
+					'light-green': '#ace4aa',
+					'yellow': '#fbf236',
+					'orange': '#df7126',
+					'brown': '#8e6f5d',
+					'dark': '#171614',
+					'gray': '#847e87',
+					'light-gray': '#eef1f5',
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			fontFamily: {
+				'pixel': ['Press Start 2P', 'cursive'],
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +103,63 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'breath-in': {
+					'0%': {
+						transform: 'scale(1)',
+						opacity: '0.7'
+					},
+					'100%': {
+						transform: 'scale(1.5)',
+						opacity: '1'
+					}
+				},
+				'breath-out': {
+					'0%': {
+						transform: 'scale(1.5)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '0.7'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-5px)'
+					}
+				},
+				'pixel-fade-in': {
+					'0%': {
+						opacity: '0',
+					},
+					'20%': {
+						opacity: '0.2',
+					},
+					'40%': {
+						opacity: '0.4',
+					},
+					'60%': {
+						opacity: '0.6',
+					},
+					'80%': {
+						opacity: '0.8',
+					},
+					'100%': {
+						opacity: '1',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'breath-in': 'breath-in 4s ease-in-out',
+				'breath-out': 'breath-out 4s ease-in-out',
+				'float': 'float 3s ease-in-out infinite',
+				'pixel-fade-in': 'pixel-fade-in 0.5s steps(5) forwards'
 			}
 		}
 	},
